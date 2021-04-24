@@ -1,10 +1,9 @@
-﻿using System;
-using Layout;
+﻿using Layout;
 using UnityEngine;
 
 namespace Buildings
 {
-    public class House : MonoBehaviour
+    public class Forge : MonoBehaviour
     {
         [HideInInspector] public Cell cell;
         public int dwarvesCounts = 5;
