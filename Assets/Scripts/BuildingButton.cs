@@ -1,3 +1,4 @@
+using Doozy.Engine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +26,6 @@ public class BuildingButton : MonoBehaviour
     private void SelectBuilding()
     {
         Layout.GridSystem.Instance.SetBuilding(BuildingPrefab);
+        GetComponentInParent<UIDrawer>().Toggle();
     }
 }
