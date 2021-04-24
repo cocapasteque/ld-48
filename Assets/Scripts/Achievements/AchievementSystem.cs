@@ -12,20 +12,26 @@ namespace Achievements
     {
         public bool clearAchievementOnAwake;
         public Achievement[] achievements;
-        
+
         private WaitForSeconds _achievementTimeout = new WaitForSeconds(2);
         private Dictionary<Achievement, bool> _unlocked = new Dictionary<Achievement, bool>();
 
         [Header("Popup Settings")] public string PopupName = "AchievementPopup";
         private UIPopup m_popup;
 
+        private int _houses;
+        private int _forges;
+        private int _taverns;
+
+        private int BuildingsSum => _houses + _forges + _taverns;
+
         public static AchievementSystem Instance;
-        
+
         void Awake()
         {
             if (Instance == null) Instance = this;
             else if (Instance != this) Destroy(this);
-            
+
             if (clearAchievementOnAwake)
             {
                 foreach (var a in achievements)
@@ -33,10 +39,9 @@ namespace Achievements
                     PlayerPrefs.SetInt(a.id, 0);
                 }
             }
-            
+
             _unlocked = achievements.ToDictionary(x => x,
                 y => PlayerPrefs.GetInt(y.id, 0) == 1);
-
         }
 
         private void Start()
@@ -44,6 +49,7 @@ namespace Achievements
             MonitorGemsAchievements();
             MonitorDwarvesAchievements();
             MonitorDeepAchievements();
+            MonitorBuildsAchievements();
         }
 
         public void UnlockAchievement(Achievement achievement)
@@ -58,15 +64,20 @@ namespace Achievements
         {
             if (building.GetType() == typeof(House))
             {
-                Debug.Log("House built");
+                _houses++;
             }
 
             if (building.GetType() == typeof(Forge))
             {
-                Debug.Log("Forge built");
+                _forges++;
+            }
+
+            if (building.GetType() == typeof(Tavern))
+            {
+                _taverns++;
             }
         }
-        
+
         private void TriggerNotification(Achievement achievement)
         {
             m_popup = UIPopupManager.GetPopup(PopupName);
@@ -105,7 +116,7 @@ namespace Achievements
                     foreach (var ga in gemsAchievements)
                     {
                         if (!_unlocked.ContainsKey(ga) || _unlocked[ga]) continue;
-                        
+
                         if (currentGems >= ga.value)
                         {
                             UnlockAchievement(ga);
@@ -113,6 +124,7 @@ namespace Achievements
 
                         yield return null;
                     }
+
                     yield return _achievementTimeout;
                 }
             }
@@ -142,6 +154,7 @@ namespace Achievements
 
                         yield return null;
                     }
+
                     yield return _achievementTimeout;
                 }
             }
@@ -167,6 +180,49 @@ namespace Achievements
                         if (currentDeepLevel >= da.value)
                         {
                             UnlockAchievement(da);
+                        }
+
+                        yield return null;
+                    }
+
+                    yield return _achievementTimeout;
+                }
+            }
+        }
+
+        private void MonitorBuildsAchievements()
+        {
+            Debug.Log("Starting Buildings monitoring");
+            var buildingsAchievements = achievements.Where(x =>
+                x.type == AchievementType.Houses || x.type == AchievementType.Forges ||
+                x.type == AchievementType.Taverns || x.type == AchievementType.Buildings);
+
+            if (buildingsAchievements.Any())
+            {
+                StartCoroutine(Work());
+            }
+
+            IEnumerator Work()
+            {
+                while (true)
+                {
+                    foreach (var ba in buildingsAchievements)
+                    {
+                        if (!_unlocked.ContainsKey(ba) || _unlocked[ba]) continue;
+                        switch (ba.type)
+                        {
+                            case AchievementType.Houses:
+                                if (_houses >= ba.value) UnlockAchievement(ba);
+                                break;
+                            case AchievementType.Forges:
+                                if (_forges >= ba.value) UnlockAchievement(ba);
+                                break;
+                            case AchievementType.Taverns:
+                                if (_taverns >= ba.value) UnlockAchievement(ba);
+                                break;
+                            case AchievementType.Buildings:
+                                if (BuildingsSum >= ba.value) UnlockAchievement(ba);
+                                break;
                         }
 
                         yield return null;
