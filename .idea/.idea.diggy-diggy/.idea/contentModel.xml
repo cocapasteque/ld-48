@@ -8,7 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Buildings" t="Include">
+            <e p="Forge.cs" t="Include" />
             <e p="House.cs" t="Include" />
+            <e p="Tavern.cs" t="Include" />
           </e>
           <e p="Layout" t="Include">
             <e p="Cell.cs" t="Include" />
