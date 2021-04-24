@@ -10,13 +10,18 @@ public class DiggingManager : MonoBehaviour
     
     public int Depth;
     public List<int> DepthCosts;
-    
+
+    public GameObject Mine;
+
     //Forge Upgrades
     public float Quality = 1f;
     //Tavern Upgrades
     public float Speed = 1f;
 
     public Text GemText;
+    public Text DwarfText;
+    public Text QualityText;
+    public Text SpeedText;
 
     public static DiggingManager Instance;
 
@@ -30,7 +35,9 @@ public class DiggingManager : MonoBehaviour
 
     private void Initialize()
     {
-        Dwarves = 1;
+        Quality = 1f;
+        Speed = 1f;
+        Dwarves = 0;
         Depth = 1;
         StartCoroutine(Mining());
     }
@@ -38,6 +45,8 @@ public class DiggingManager : MonoBehaviour
     private void Update()
     {
         GemText.text = $"Gems: {Gems}";
+        QualityText.text = $"Quality: {(int)Quality * 100}%";
+        SpeedText.text = $"Motivation: {(int)Speed * 100}%";
     }
 
     public void IncreaseDepth()
@@ -54,6 +63,11 @@ public class DiggingManager : MonoBehaviour
         Gems -= amount;
     }
 
+    public void MineClicked()
+    {
+        Gems += Mathf.RoundToInt(Quality * Depth);
+    }
+
     public void IncreaseDwarves(int amount)
     {
         Dwarves += amount;
@@ -65,7 +79,7 @@ public class DiggingManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f / Speed);
             //Todo: Balancing
-            Gems += Mathf.RoundToInt(Dwarves * Quality * Depth);
+            Gems += Mathf.RoundToInt(Dwarves * Depth);
         }
     }
 }

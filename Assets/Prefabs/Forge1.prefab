@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6559199106452271235}
   - component: {fileID: 7734030379652713272}
   m_Layer: 0
-  m_Name: Forge
+  m_Name: Forge1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   Cost: 20
   Level: 1
   cell: {fileID: 0}
-  QualityMultiplier: 1.1
+  QualityMultiplier: 2
 --- !u!61 &7734030379652713272
 BoxCollider2D:
   m_ObjectHideFlags: 0

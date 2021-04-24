@@ -9,4 +9,9 @@ public class Tavern : Building
         base.Start();
         DiggingManager.Instance.Speed *= SpeedMultiplier;
     }
+
+    private void OnDestroy()
+    {
+        DiggingManager.Instance.Speed /= SpeedMultiplier;
+    }
 }

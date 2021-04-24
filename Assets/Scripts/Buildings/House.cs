@@ -9,4 +9,9 @@ public class House : Building
         base.Start();
         DiggingManager.Instance.Dwarves += DwarfCount;
     }
+
+    private void OnDestroy()
+    {
+        DiggingManager.Instance.Dwarves -= DwarfCount;
+    }
 }

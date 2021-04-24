@@ -9,4 +9,9 @@ public class Forge : Building
         base.Start();
         DiggingManager.Instance.Quality *= QualityMultiplier;
     }
+
+    private void OnDestroy()
+    {
+        DiggingManager.Instance.Quality /= QualityMultiplier;
+    }
 }
