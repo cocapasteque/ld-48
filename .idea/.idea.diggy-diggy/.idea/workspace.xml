@@ -19,7 +19,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f809cde-36d1-4003-8d6f-22808b99334e" name="Default Changelist" comment="" />
+    <list default="true" id="6f809cde-36d1-4003-8d6f-22808b99334e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Achievements.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Achievements/Achievement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Achievements/Achievement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Achievements/AchievementSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Achievements/AchievementSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Editor/Nody/Settings/NodyWindowSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Editor/Nody/Settings/NodyWindowSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Engine/Resources/Data/UIPopup/_UIPopupDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Engine/Resources/Data/UIPopup/_UIPopupDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Engine/Resources/DoozySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Engine/Resources/DoozySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Graphs/E11 - UIPopup.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Examples/Graphs/E11 - UIPopup.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Prefabs/Popups/E11 - Popup 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Examples/Prefabs/Popups/E11 - Popup 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_AchievementPopup.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_AchievementPopup.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_AllYourBase.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_AllYourBase.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_Popup1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_Popup1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_Popup2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_Popup2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_Popup3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Doozy/Examples/Resources/UIPopup/UIPopupLink_Popup3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,10 +59,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GridSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Layout/Cell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Layout/Grid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buildings/House.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buildings/Tavern.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buildings/Forge.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Achievements/Achievement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Achievements/AchievementSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" />
       </list>
     </option>
   </component>
@@ -85,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619257982351</updated>
-      <workItem from="1619258009238" duration="4693000" />
+      <workItem from="1619258009238" duration="12221000" />
     </task>
     <servers />
   </component>

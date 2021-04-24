@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4645795567923047170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4645795567923047168}
+  - component: {fileID: 4645795567923047169}
+  m_Layer: 0
+  m_Name: Achievement System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4645795567923047168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645795567923047170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.414718, y: 1.8807551, z: -11.725024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4645795567923047169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645795567923047170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6bfea97a934b0fb15b9f8b4b5bcf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearAchievementOnAwake: 1
+  achievements:
+  - {fileID: 11400000, guid: a3f87c3df184be440ba5c094899705fe, type: 2}
+  - {fileID: 11400000, guid: ae30f15433838e74c82682e04474bbc4, type: 2}
+  - {fileID: 11400000, guid: 69fc62020abd523459890ee198b4ad10, type: 2}
+  - {fileID: 11400000, guid: 46e4014f1a2562944ae34d8dedc1285b, type: 2}
+  - {fileID: 11400000, guid: 91b3f7ec8d90bc44db59d00e33f10623, type: 2}
+  - {fileID: 11400000, guid: 7028d891900ceb04a82d2c4373d70734, type: 2}
+  - {fileID: 11400000, guid: f68ec34ca18dafd4e84a993f3b24c375, type: 2}
+  - {fileID: 11400000, guid: 04433b4e9c5525b44bc5b15205c54f23, type: 2}
+  - {fileID: 11400000, guid: 15dfc4ea0164c004b86c37e86242e384, type: 2}
+  - {fileID: 11400000, guid: f49daa8b4f901b24398fb4c573e261f7, type: 2}
+  - {fileID: 11400000, guid: a639f0b88fc1e5f459cbb38e52819b5f, type: 2}
+  - {fileID: 11400000, guid: 19c01076a22603b4396e61de1333e710, type: 2}
+  - {fileID: 11400000, guid: fac411112d4b75e45832bedc9c4d2f84, type: 2}
+  - {fileID: 11400000, guid: 630f3708616be14459ab93193b34f692, type: 2}
+  - {fileID: 11400000, guid: 86fe3cee3c7ada74fb6838fac2938733, type: 2}
+  - {fileID: 11400000, guid: 74eae156373acfb4eba4edc9f49b398d, type: 2}
+  - {fileID: 11400000, guid: fd1ef0a5fb61fcf468174722757b06a5, type: 2}
+  - {fileID: 11400000, guid: a908ef349b13ca34f921391ac2a9a071, type: 2}
+  - {fileID: 11400000, guid: 9dd04d79ac06b4545a0691656f49e0bc, type: 2}
+  - {fileID: 11400000, guid: 41d6b180066396241af98e380e03a58d, type: 2}
+  - {fileID: 11400000, guid: 06155a366ba76524cae52944b3c25caa, type: 2}
+  - {fileID: 11400000, guid: 6388ed447d1e86741b5797b231bb83d9, type: 2}
+  - {fileID: 11400000, guid: 2027d382a72b6a443aef716a2ef0532d, type: 2}
+  - {fileID: 11400000, guid: a2ea6723e6d49aa4ebbb3386f2194c03, type: 2}
+  - {fileID: 11400000, guid: c091d9fc502af994081e17d866f577a1, type: 2}
+  - {fileID: 11400000, guid: 8e7a8addd13c7554e83ae06f76f158e9, type: 2}
+  - {fileID: 11400000, guid: 2dae97ab1da50a044a8cc7331f920d5f, type: 2}
+  - {fileID: 11400000, guid: 9c3325dfb67fd9d4495813b8746a89c5, type: 2}
+  - {fileID: 11400000, guid: 39364460033bb2d4592bd460d2b4b8b5, type: 2}
+  - {fileID: 11400000, guid: 60b1c948ffe04184588106f6ded2879d, type: 2}
+  - {fileID: 11400000, guid: 1a70a0d0b0e422c489bd2efb27629aa6, type: 2}
+  - {fileID: 11400000, guid: 5b38b8b00f1bebb499fc9e7a7b3fc8c6, type: 2}
+  PopupName: AchievementPopup

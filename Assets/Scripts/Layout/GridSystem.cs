@@ -1,4 +1,5 @@
 using System;
+using Achievements;
 using UnityEngine;
 
 namespace Layout
@@ -52,7 +53,10 @@ namespace Layout
                 {
                     var cell = hit.collider.GetComponent<Cell>();
                     grid.SetCell(currentBuilding.gameObject, cell.x, cell.y);
+                    
                     DiggingManager.Instance.PayGems(currentBuilding.Cost);
+                    AchievementSystem.Instance.BuildingBuilt(currentBuilding);
+                    
                     SetBuilding(null);
                 }
             }

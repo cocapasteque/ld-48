@@ -832,7 +832,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Achievements" t="Include">
+            <e p="Achievement.cs" t="Include" />
+            <e p="AchievementSystem.cs" t="Include" />
+          </e>
+          <e p="BuildingButton.cs" t="Include" />
           <e p="Buildings" t="Include">
+            <e p="Building.cs" t="Include" />
             <e p="Forge.cs" t="Include" />
             <e p="House.cs" t="Include" />
             <e p="Tavern.cs" t="Include" />
