@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiggingManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class DiggingManager : MonoBehaviour
     //Tavern Upgrades
     public float Speed = 1f;
 
+    public Text GemText;
 
     public static DiggingManager Instance;
 
@@ -28,7 +30,14 @@ public class DiggingManager : MonoBehaviour
 
     private void Initialize()
     {
+        Dwarves = 1;
+        Depth = 1;
         StartCoroutine(Mining());
+    }
+
+    private void Update()
+    {
+        GemText.text = $"Gems: {Gems}";
     }
 
     public void IncreaseDepth()
@@ -59,5 +68,4 @@ public class DiggingManager : MonoBehaviour
             Gems += Mathf.RoundToInt(Dwarves * Quality * Depth);
         }
     }
-
 }

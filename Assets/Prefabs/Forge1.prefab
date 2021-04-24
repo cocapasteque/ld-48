@@ -142,8 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fb322cf01843529857901ebf998940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Forge1
+  Cost: 20
+  Level: 1
   cell: {fileID: 0}
-  dwarvesCounts: 5
+  QualityMultiplier: 1.1
 --- !u!61 &7734030379652713272
 BoxCollider2D:
   m_ObjectHideFlags: 0

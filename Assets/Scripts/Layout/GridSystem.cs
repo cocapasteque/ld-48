@@ -6,46 +6,56 @@ namespace Layout
     public class GridSystem : MonoBehaviour
     {
         public Grid grid;
-        public GameObject housePrefab;
-        public GameObject tavernPrefab;
-        public GameObject forgePrefab;
+        public SpriteRenderer CursorIcon;
+        public Vector2 CursorIconOffset;
 
-        public BuildingType currentType;
-        
+        private Building currentBuilding;
+        private Vector3 mousePos;
+       
+        public static GridSystem Instance;
+
+        private void Awake()
+        {
+            if (Instance == null) Instance = this;
+            else if (Instance != this) Destroy(this);
+        }
+
         void Update()
         {
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (Input.GetMouseButtonDown(0))
             {
                 HandleGridClicked();                
+            }
+            if (currentBuilding != null)
+            {
+                CursorIcon.transform.position = (Vector2)mousePos + CursorIconOffset;
+            }
+        }
+
+        public void SetBuilding(Building building)
+        {
+            currentBuilding = building;
+            CursorIcon.gameObject.SetActive(building != null);
+            if (building != null)
+            {
+                CursorIcon.sprite = building.gameObject.GetComponentInChildren<SpriteRenderer>().sprite;
             }
         }
 
         private void HandleGridClicked()
         {
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var hit = Physics2D.Raycast(mousePos, Vector2.zero);
-            if (hit)
+            if (currentBuilding != null)
             {
-                var cell = hit.collider.GetComponent<Cell>();
-
-                switch (currentType)
+                var hit = Physics2D.Raycast(mousePos, Vector2.zero);
+                if (hit)
                 {
-                    case BuildingType.House:
-                        grid.SetCell(housePrefab, cell.x, cell.y);
-                        break;
-                    case BuildingType.Tavern:
-                        grid.SetCell(tavernPrefab, cell.x, cell.y);
-                        break;
-                    case BuildingType.Forge:
-                        grid.SetCell(forgePrefab, cell.x, cell.y);
-                        break;
+                    var cell = hit.collider.GetComponent<Cell>();
+                    grid.SetCell(currentBuilding.gameObject, cell.x, cell.y);
+                    DiggingManager.Instance.PayGems(currentBuilding.Cost);
+                    SetBuilding(null);
                 }
             }
         }
-    }
-
-    public enum BuildingType
-    {
-        House, Tavern, Forge
     }
 }

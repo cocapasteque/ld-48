@@ -1,16 +1,12 @@
-﻿using Layout;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Buildings
+public class Forge : Building
 {
-    public class Forge : MonoBehaviour
+    public float QualityMultiplier;
+
+    protected override void Start()
     {
-        [HideInInspector] public Cell cell;
-        public int dwarvesCounts = 5;
-        
-        private void Start()
-        {
-            cell = GetComponent<Cell>();
-        }
+        base.Start();
+        DiggingManager.Instance.Quality *= QualityMultiplier;
     }
 }

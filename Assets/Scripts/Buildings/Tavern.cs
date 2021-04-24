@@ -1,16 +1,12 @@
-﻿using Layout;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Buildings
+public class Tavern : Building
 {
-    public class Tavern : MonoBehaviour
+    public float SpeedMultiplier;
+
+    protected override void Start()
     {
-        [HideInInspector] public Cell cell;
-        public int dwarvesCounts = 5;
-        
-        private void Start()
-        {
-            cell = GetComponent<Cell>();
-        }
+        base.Start();
+        DiggingManager.Instance.Speed *= SpeedMultiplier;
     }
 }

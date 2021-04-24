@@ -1,17 +1,12 @@
-﻿using System;
-using Layout;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Buildings
+public class House : Building
 {
-    public class House : MonoBehaviour
+    public int DwarfCount;
+
+    protected override void Start()
     {
-        [HideInInspector] public Cell cell;
-        public int dwarvesCounts = 5;
-        
-        private void Start()
-        {
-            cell = GetComponent<Cell>();
-        }
+        base.Start();
+        DiggingManager.Instance.Dwarves += DwarfCount;
     }
 }
