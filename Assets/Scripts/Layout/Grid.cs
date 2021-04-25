@@ -36,6 +36,22 @@ namespace Layout
             cells[x, y] = cell;
         }
 
+        public void RemoveBuilding(int x, int y)
+        {
+            var previous = cells[x, y];
+            Destroy(previous.gameObject);
+            var instance = Instantiate(emptyCell, transform);
+            var pos = new Vector2(x * cellWidth, y * cellHeight);
+            instance.transform.position = pos;
+            instance.name = $"Cell ({x}-{y})";
+
+            var cell = instance.GetComponent<Cell>();
+            cell.x = x;
+            cell.y = y;
+
+            cells[x, y] = cell;
+        }
+
         public void BuildGrid()
         {
             cells = new Cell[width, height];
