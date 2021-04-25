@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6f809cde-36d1-4003-8d6f-22808b99334e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tiles/New Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tiles/New Palette.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Untitled - 1.pyxel" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Untitled - 1.pyxel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/House1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/House1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/House2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/House2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
