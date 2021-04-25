@@ -12,6 +12,7 @@ public class DiggingManager : MonoBehaviour
     public int Depth;
     public List<int> DepthCosts;
     public List<GameObject> DepthTiles;
+    public List<string> StoryTexts;
 
     public GameObject Mine;
 
@@ -26,7 +27,10 @@ public class DiggingManager : MonoBehaviour
     public TextMeshProUGUI SpeedText;
 
     public CanvasGroup ScreenFader;
+    
     public float FadeDuration;
+
+    private TextMeshProUGUI faderText;
 
     public static DiggingManager Instance;
 
@@ -40,11 +44,45 @@ public class DiggingManager : MonoBehaviour
 
     private void Initialize()
     {
+        faderText = ScreenFader.GetComponentInChildren<TextMeshProUGUI>();
+        var faderTextCg = faderText.GetComponent<CanvasGroup>();
         Quality = 1f;
         Speed = 1f;
         Dwarves = 0;
         Depth = 1;
-        StartCoroutine(Mining());
+
+        StartCoroutine(InitialFade());
+        
+        IEnumerator InitialFade()
+        {
+            yield return new WaitForSeconds(1f);
+
+            float t = 0f;
+            float startTime = Time.time;
+            faderText.text = StoryTexts[0];
+
+            while (t < 1)
+            {
+                t = (Time.time - startTime) / FadeDuration;
+                faderTextCg.alpha = Mathf.Lerp(0f, 1f, t);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(3f);
+            
+            t = 0f;
+            startTime = Time.time;
+            while (t < 1f)
+            {
+                t = (Time.time - startTime) / FadeDuration;
+                ScreenFader.alpha = Mathf.Lerp(1f, 0f, t);
+                yield return null;
+            }
+            ScreenFader.interactable = false;
+            ScreenFader.blocksRaycasts = false;
+
+            StartCoroutine(Mining());
+        }
     }
 
     private void Update()
@@ -70,6 +108,7 @@ public class DiggingManager : MonoBehaviour
 
         IEnumerator ChangeDepth()
         {
+            faderText.text = StoryTexts[Depth];
             var t = 0f;
             var startTime = Time.time;
             ScreenFader.interactable = true;
@@ -86,7 +125,7 @@ public class DiggingManager : MonoBehaviour
             DepthTiles[Depth - 1].SetActive(true);
             Layout.GridSystem.Instance.ClearGrid();
 
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(3f);
 
             t = 0f;
             startTime = Time.time;
