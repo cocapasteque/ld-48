@@ -10,13 +10,43 @@ public class BuildingCanvas : MonoBehaviour
     public float Distance;
     
     private float t = 0;
+    private Building building;
     private IEnumerator coroutine;
 
     private void OnEnable()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        building = GetComponentInParent<Building>();
+
         LeftButton.transform.localPosition = Vector3.zero;
         LeftButton.GetComponent<CanvasGroup>().alpha = 0;
         LeftButton.interactable = false;
+
+        if (building.UpgradedBuilding != null)
+        {
+            LeftButton.GetComponent<Button>().onClick.AddListener(Upgrade);
+        }
+        else
+        {
+            LeftButton.gameObject.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (building.UpgradedBuilding != null)
+        {
+            LeftButton.GetComponent<Button>().interactable = DiggingManager.Instance.Gems >= building.UpgradedBuilding.Cost;
+        }
+    }
+
+    private void Upgrade()
+    {
+        building.Upgrade();
     }
 
     public void Show(bool show)
