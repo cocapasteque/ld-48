@@ -1,13 +1,14 @@
 using Doozy.Engine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BuildingButton : MonoBehaviour
 {
     public Building BuildingPrefab;
-    public Text ButtonText;
+    public TextMeshProUGUI ButtonText;
 
     private Button button;
 

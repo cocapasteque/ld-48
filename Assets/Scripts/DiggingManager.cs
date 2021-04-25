@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,7 @@ public class DiggingManager : MonoBehaviour
     //Tavern Upgrades
     public float Speed = 1f;
 
-    public Text GemText;
+    public TextMeshProUGUI GemText;
     public Text DwarfText;
     public Text QualityText;
     public Text SpeedText;
@@ -44,7 +45,7 @@ public class DiggingManager : MonoBehaviour
 
     private void Update()
     {
-        GemText.text = $"Gems: {Gems}";
+        GemText.text = $"{Gems}";
         DwarfText.text = $"Dwarves: {Dwarves}";
         QualityText.text = $"Quality: {(int)Quality * 100}%";
         SpeedText.text = $"Motivation: {(int)(Speed * 100f)}%";
