@@ -6,5 +6,6 @@ namespace Layout
     {
         public int x;
         public int y;
+        public GameObject building;
     }
 }
