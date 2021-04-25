@@ -21,9 +21,9 @@ public class DiggingManager : MonoBehaviour
     public float Speed = 1f;
 
     public TextMeshProUGUI GemText;
-    public Text DwarfText;
-    public Text QualityText;
-    public Text SpeedText;
+    public TextMeshProUGUI DwarfText;
+    public TextMeshProUGUI QualityText;
+    public TextMeshProUGUI SpeedText;
 
     public CanvasGroup ScreenFader;
     public float FadeDuration;
