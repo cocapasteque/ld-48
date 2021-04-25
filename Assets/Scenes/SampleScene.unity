@@ -25181,11 +25181,12 @@ MonoBehaviour:
   - {fileID: 2053749245}
   - {fileID: 1793116335}
   StoryTexts:
-  - test
-  - 2sda
-  - sadggds
-  - 'gweg w '
-  - 'dasdafw '
+  - One day, a tribe of dwarves found an unusual large amount of gems underground
+    and started digging...
+  - ...As they dug deeper, they found more and more gems...
+  - "...Driven by their greed, the dwarves dug deeper and deeper\u2026"
+  - "...They could have stopped at any time, but they always wanted more\u2026"
+  - ...Until eventually, they dug too deep...
   Mine: {fileID: 424788703222856271, guid: 392f05964bfa2774fbbac5bad6b75bf0, type: 3}
   Quality: 1
   Speed: 1
