@@ -113,5 +113,15 @@ namespace Layout
                 currentlyShowingCanvas.building.GetComponentInChildren<BuildingCanvas>().Show(false);
             }
         }
+
+        public void ClearGrid()
+        {
+            foreach(var cell in grid.cells)
+            {
+                Destroy(cell.gameObject);
+            }
+            grid.BuildGrid();
+            Initialize();
+        }
     }
 }
