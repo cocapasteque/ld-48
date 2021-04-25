@@ -849,6 +849,9 @@
             <e p="Grid.cs" t="Include" />
             <e p="GridSystem.cs" t="Include" />
           </e>
+          <e p="Utils" t="Include">
+            <e p="FlickeringLight.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="diggy-diggy.sln" t="IncludeFlat" />

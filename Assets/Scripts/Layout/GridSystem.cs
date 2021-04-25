@@ -1,5 +1,6 @@
 using System;
 using Achievements;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Layout
@@ -64,7 +65,10 @@ namespace Layout
                 if (cell.x == grid.width / 2 && cell.y == grid.height / 2)
                 {
                     if (currentBuilding == null)
-                        DiggingManager.Instance.MineClicked();
+                    {
+                        hit.collider.gameObject.transform.DOPunchScale(Vector3.one/3, 0.1f);
+                        DiggingManager.Instance.MineClicked();   
+                    }
                     else
                         return;
                 }
