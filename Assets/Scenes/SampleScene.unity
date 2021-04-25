@@ -3464,6 +3464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4645795567923047169, guid: 746ab9690a4df5c4d9be033ab2b22d70, type: 3}
+      propertyPath: achievements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4645795567923047170, guid: 746ab9690a4df5c4d9be033ab2b22d70, type: 3}
       propertyPath: m_Name
       value: Achievement System

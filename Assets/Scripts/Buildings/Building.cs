@@ -23,4 +23,10 @@ public abstract class Building : MonoBehaviour
             GridSystem.Instance.grid.SetCell(UpgradedBuilding.gameObject, cell.x, cell.y);
         }
     }
+
+    public void Sell()
+    {
+        DiggingManager.Instance.PayGems(-Cost / 2);
+        GridSystem.Instance.grid.RemoveBuilding(cell.x, cell.y);
+    }
 }
