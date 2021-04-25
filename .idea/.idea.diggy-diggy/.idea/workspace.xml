@@ -20,27 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f809cde-36d1-4003-8d6f-22808b99334e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Forge_T1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Forge_T1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Forge_T1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Forge_T1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/House_T1_pxart.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/House_T1_pxart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/House_T1_pxart.pyxel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/House_T1_pxart.pyxel.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/House_T1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/House_T1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Mine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Mine.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tavern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tavern.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tiles/New Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tiles/New Palette.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/ground_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/ground_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Forge1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Forge1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/House1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/House1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Mine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Mine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tavern1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tavern1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Untitled - 1.pyxel" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Untitled - 1.pyxel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/diggy_art.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/diggy_art.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ground_2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ground_2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ground_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/ground_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619257982351</updated>
       <workItem from="1619258009238" duration="13799000" />
-      <workItem from="1619339327290" duration="1758000" />
+      <workItem from="1619339327290" duration="2420000" />
     </task>
     <servers />
   </component>
