@@ -10,9 +10,11 @@ namespace Layout
         public Grid grid;
         public SpriteRenderer CursorIcon;
         public Vector2 CursorIconOffset;
+        public float CanvasMoveSpeed;
 
         private Building currentBuilding;
         private Vector3 mousePos;
+        private Cell currentlyShowingCanvas;
 
         public static GridSystem Instance;
 
@@ -66,21 +68,49 @@ namespace Layout
                 {
                     if (currentBuilding == null)
                     {
-                        hit.collider.gameObject.transform.DOPunchScale(Vector3.one/3, 0.1f);
-                        DiggingManager.Instance.MineClicked();   
+                        hit.collider.gameObject.transform.DOPunchScale(Vector3.one / 3, 0.1f);
+                        DiggingManager.Instance.MineClicked();
                     }
                     else
                         return;
                 }
-                if (currentBuilding != null)
+                else
                 {
-                    grid.SetCell(currentBuilding.gameObject, cell.x, cell.y);
+                    if (currentBuilding != null)
+                    {
+                        grid.SetCell(currentBuilding.gameObject, cell.x, cell.y);
 
-                    DiggingManager.Instance.PayGems(currentBuilding.Cost);
-                    AchievementSystem.Instance.BuildingBuilt(currentBuilding);
+                        DiggingManager.Instance.PayGems(currentBuilding.Cost);
+                        AchievementSystem.Instance.BuildingBuilt(currentBuilding);
 
-                    SetBuilding(null);
+                        SetBuilding(null);
+                    }
+                    else
+                    {
+                        if (cell.building != null)
+                        {
+                            HideCurrentBuildingCanvas(cell);
+                            cell.building.GetComponentInChildren<BuildingCanvas>().Show(true);
+                            currentlyShowingCanvas = cell;
+                        }
+                    }
                 }
+            }
+            else
+            {
+                SetBuilding(null);
+            }
+        }
+        public void HideCurrentBuildingCanvas()
+        {
+            HideCurrentBuildingCanvas(null);
+        }
+
+        public void HideCurrentBuildingCanvas(Cell cell)
+        {
+            if (currentlyShowingCanvas != null && (cell == null || currentlyShowingCanvas != cell))
+            {
+                currentlyShowingCanvas.building.GetComponentInChildren<BuildingCanvas>().Show(false);
             }
         }
     }

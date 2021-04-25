@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5731190196866277444}
   - component: {fileID: 5136476334418281197}
   m_Layer: 0
-  m_Name: House1
+  m_Name: House2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b8646df4984e65a245551ed416888b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Tent
-  Cost: 10
-  UpgradedBuilding: {fileID: 716703977351868257, guid: 37bbe27aed059d94db9a2e4e074e2ddd, type: 3}
+  Name: Better Tent
+  Cost: 30
+  UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}
-  DwarfCount: 2
+  DwarfCount: 4
 --- !u!61 &5731190196866277444
 BoxCollider2D:
   m_ObjectHideFlags: 0

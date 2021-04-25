@@ -32,7 +32,7 @@ namespace Layout
             var cell = instance.GetComponent<Cell>();
             cell.x = x;
             cell.y = y;
-
+            cell.building = instance;
             cells[x, y] = cell;
         }
 

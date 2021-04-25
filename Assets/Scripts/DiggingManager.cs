@@ -45,8 +45,9 @@ public class DiggingManager : MonoBehaviour
     private void Update()
     {
         GemText.text = $"Gems: {Gems}";
+        DwarfText.text = $"Dwarves: {Dwarves}";
         QualityText.text = $"Quality: {(int)Quality * 100}%";
-        SpeedText.text = $"Motivation: {(int)Speed * 100}%";
+        SpeedText.text = $"Motivation: {(int)(Speed * 100f)}%";
     }
 
     public void IncreaseDepth()

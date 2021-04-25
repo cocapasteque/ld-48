@@ -7,11 +7,20 @@ public abstract class Building : MonoBehaviour
 {
     public string Name;
     public int Cost;
-    public int Level;
+    public Building UpgradedBuilding;
     [HideInInspector] public Cell cell;
 
     protected virtual void Start()
     {
         cell = GetComponent<Cell>();
+    }
+
+    public void Upgrade()
+    {
+        if (UpgradedBuilding != null)
+        {
+            DiggingManager.Instance.PayGems(UpgradedBuilding.Cost);
+            GridSystem.Instance.grid.SetCell(UpgradedBuilding.gameObject, cell.x, cell.y);
+        }
     }
 }
