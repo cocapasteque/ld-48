@@ -66,7 +66,7 @@ namespace Layout
                 var cell = hit.collider.GetComponent<Cell>();
                 if (cell.x == grid.width / 2 && cell.y == grid.height / 2)
                 {
-                    if (currentBuilding == null)
+                    if (currentBuilding == null && !DiggingManager.Instance.ActiveFader)
                     {
                         hit.collider.gameObject.transform.DOPunchScale(Vector3.one / 4, 0.1f);
                         DiggingManager.Instance.MineClicked();

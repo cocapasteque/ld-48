@@ -22,6 +22,8 @@ public class DiggingManager : MonoBehaviour
     //Tavern Upgrades
     public float Speed = 1f;
 
+    public Button NextLevelButton;
+
     public TextMeshProUGUI GemText;
     public TextMeshProUGUI DwarfText;
     public TextMeshProUGUI QualityText;
@@ -34,8 +36,11 @@ public class DiggingManager : MonoBehaviour
     public GameObject CollectingText;
     public Vector2 StartCollectingPosition;
     public Transform MasterCanvas;
+
+    public bool ActiveFader;
+
     private Vector2 CollectingWorldPos;
-    
+    private Image NextLevelImage;
     private TextMeshProUGUI faderText;
 
     public static DiggingManager Instance;
@@ -53,6 +58,7 @@ public class DiggingManager : MonoBehaviour
     {
         faderText = ScreenFader.GetComponentInChildren<TextMeshProUGUI>();
         var faderTextCg = faderText.GetComponent<CanvasGroup>();
+        NextLevelImage = NextLevelButton.GetComponent<Image>();
         Quality = 1f;
         Speed = 1f;
         Dwarves = 0;
@@ -62,6 +68,7 @@ public class DiggingManager : MonoBehaviour
         
         IEnumerator InitialFade()
         {
+            ActiveFader = true;
             yield return new WaitForSeconds(1f);
 
             float t = 0f;
@@ -87,7 +94,7 @@ public class DiggingManager : MonoBehaviour
             }
             ScreenFader.interactable = false;
             ScreenFader.blocksRaycasts = false;
-
+            ActiveFader = false;
             StartCoroutine(Mining());
         }
     }
@@ -99,10 +106,8 @@ public class DiggingManager : MonoBehaviour
         QualityText.text = $"Quality: {(int)Quality * 100}%";
         SpeedText.text = $"Motivation: {(int)(Speed * 100f)}%";
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            IncreaseDepth();
-        }
+        NextLevelImage.fillAmount = (float)Gems / DepthCosts[Depth - 1];
+        NextLevelButton.interactable = Gems >= DepthCosts[Depth - 1];
     }
 
     public void IncreaseDepth()
@@ -115,6 +120,8 @@ public class DiggingManager : MonoBehaviour
 
         IEnumerator ChangeDepth()
         {
+            ActiveFader = true;
+            Layout.GridSystem.Instance.SetBuilding(null);
             faderText.text = StoryTexts[Depth];
             var t = 0f;
             var startTime = Time.time;
@@ -144,6 +151,7 @@ public class DiggingManager : MonoBehaviour
             }
             ScreenFader.interactable = false;
             ScreenFader.blocksRaycasts = false;
+            ActiveFader = false;
         }
     }
 
