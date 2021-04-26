@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e670550538483fac7796b912d8a0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Tavern2
+  Name: Party Tavern
   Cost: 150
   UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}

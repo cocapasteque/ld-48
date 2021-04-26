@@ -64,9 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b8646df4984e65a245551ed416888b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Better Tent
-  Cost: 30
-  UpgradedBuilding: {fileID: 0}
+  Name: Small House
+  Cost: 50
+  UpgradedBuilding: {fileID: 716703977351868257, guid: 30f34e90b2e5c9244b6ba4fdca9470a9, type: 3}
   cell: {fileID: 0}
   DwarfCount: 4
 --- !u!61 &5731190196866277444
@@ -122,7 +122,7 @@ MonoBehaviour:
   - {x: 0.8572477, y: 1.3013978, z: 0}
   m_ShapePathHash: -134989078
   m_Mesh: {fileID: 0}
-  m_InstanceId: 81906
+  m_InstanceId: 49190
 --- !u!1 &3128199798926237919
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 1a93e084685534d439818a84f46a728e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a2b65e01ed2d2946bf3d06df8083efc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

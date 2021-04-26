@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class DiggingManager : MonoBehaviour
 {
-    public int Gems;
+    public long Gems;
+    public List<string> Suffixes;
+    public long TotalMinedGems;
     public int Dwarves;
     
     public int Depth;
@@ -60,7 +62,7 @@ public class DiggingManager : MonoBehaviour
         var faderTextCg = faderText.GetComponent<CanvasGroup>();
         NextLevelImage = NextLevelButton.GetComponent<Image>();
         Quality = 1f;
-        Speed = 1f;
+        Speed = .5f;
         Dwarves = 0;
         Depth = 1;
 
@@ -101,13 +103,25 @@ public class DiggingManager : MonoBehaviour
 
     private void Update()
     {
-        GemText.text = $"{Gems}";
+        UpdateGemText();
         DwarfText.text = $"Dwarves: {Dwarves}";
         QualityText.text = $"Quality: {(int)Quality * 100}%";
         SpeedText.text = $"Motivation: {(int)(Speed * 100f)}%";
 
         NextLevelImage.fillAmount = (float)Gems / DepthCosts[Depth - 1];
         NextLevelButton.interactable = Gems >= DepthCosts[Depth - 1];
+    }
+
+    private void UpdateGemText()
+    {
+        int suffixIndex = 0;
+        string gemText = Gems.ToString();
+        while (gemText.ToString().Length > 5)
+        {
+            suffixIndex++;
+            gemText = gemText.Substring(0, gemText.Length - 3);
+        }
+        GemText.text = $"{gemText}{Suffixes[suffixIndex]}";
     }
 
     public void IncreaseDepth()
@@ -162,11 +176,12 @@ public class DiggingManager : MonoBehaviour
 
     public void MineClicked()
     {
-        var value = Mathf.RoundToInt(Quality * Depth);
+        var value = Mathf.RoundToInt(Quality * Mathf.Pow(3, Depth - 1));
 
         DisplayGemsCollected(value);
         
         Gems += value;
+        TotalMinedGems += value;
     }
 
     public void DisplayGemsCollected(float value)
@@ -193,10 +208,10 @@ public class DiggingManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f / Speed);
             //Todo: Balancing
-            var value =  Mathf.RoundToInt(Dwarves * Depth);
+            var value =  Mathf.RoundToInt(Dwarves * Mathf.Pow(3, Depth - 1));
             if(value > 0) DisplayGemsCollected(value);
             Gems += value;
-
+            TotalMinedGems += value;
         }
     }
 }

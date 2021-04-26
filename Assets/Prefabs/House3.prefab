@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5731190196866277444}
   - component: {fileID: 5136476334418281197}
   m_Layer: 0
-  m_Name: House1
+  m_Name: House3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b8646df4984e65a245551ed416888b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Tent
-  Cost: 10
-  UpgradedBuilding: {fileID: 716703977351868257, guid: 37bbe27aed059d94db9a2e4e074e2ddd, type: 3}
+  Name: Large House
+  Cost: 200
+  UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}
-  DwarfCount: 1
+  DwarfCount: 10
 --- !u!61 &5731190196866277444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -114,14 +114,15 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.6032473, y: 0.7041435, z: 0}
-  - {x: -0.936217, y: -0.06283529, z: 0}
-  - {x: -0.21598458, y: -0.41062325, z: 0}
-  - {x: 0.32998586, y: -0.13902396, z: 0}
-  - {x: 0.10024232, y: 0.35821748, z: 0}
-  m_ShapePathHash: 586852556
+  - {x: -0.14259025, y: 1.8128393, z: 0}
+  - {x: -0.9869875, y: 1.4098432, z: 0}
+  - {x: -0.9341606, y: 0.13020554, z: 0}
+  - {x: 0.04376483, y: -0.31154925, z: 0}
+  - {x: 0.8649271, y: 0.04009647, z: 0}
+  - {x: 0.8572477, y: 1.3013978, z: 0}
+  m_ShapePathHash: -134989078
   m_Mesh: {fileID: 0}
-  m_InstanceId: 81854
+  m_InstanceId: 81906
 --- !u!1 &3128199798926237919
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128199798926237919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.214, y: 0.218, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.129, z: 0}
   m_LocalScale: {x: 3.3503, y: 3.3503, z: 3.3503}
   m_Children: []
   m_Father: {fileID: 5309328527776917437}
@@ -193,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 09c634ea9413820459b16266bdf1beab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a93e084685534d439818a84f46a728e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -338,12 +339,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.33385256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.33385256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.33385256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.847
+      value: 0.728
       objectReference: {fileID: 0}
     - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.337
+      value: 0.309
       objectReference: {fileID: 0}
     - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
       propertyPath: m_LocalPosition.z

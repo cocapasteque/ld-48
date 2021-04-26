@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fb322cf01843529857901ebf998940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Forge1
+  Name: Large Forge
   Cost: 50
   UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}

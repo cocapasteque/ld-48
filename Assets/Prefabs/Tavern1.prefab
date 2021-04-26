@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e670550538483fac7796b912d8a0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Tavern1
+  Name: Tavern
   Cost: 20
   UpgradedBuilding: {fileID: 918803715190772689, guid: 0bdf47a07d991b04cadce2379e603896, type: 3}
   cell: {fileID: 0}
