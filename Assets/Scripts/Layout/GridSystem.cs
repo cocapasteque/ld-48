@@ -88,10 +88,17 @@ namespace Layout
                     else
                     {
                         if (cell.building != null)
-                        {                           
-                            HideCurrentBuildingCanvas(cell);
-                            cell.building.GetComponentInChildren<BuildingCanvas>().Show(true);
-                            currentlyShowingCanvas = cell;
+                        {
+                            if (currentlyShowingCanvas == cell)
+                            {
+                                HideCurrentBuildingCanvas();
+                            }
+                            else
+                            { 
+                                HideCurrentBuildingCanvas(cell);
+                                cell.building.GetComponentInChildren<BuildingCanvas>().Show(true);
+                                currentlyShowingCanvas = cell;
+                            }
                         }
                     }
                 }
@@ -111,6 +118,7 @@ namespace Layout
             if (currentlyShowingCanvas != null && (cell == null || currentlyShowingCanvas != cell))
             {
                 currentlyShowingCanvas.building.GetComponentInChildren<BuildingCanvas>().Show(false);
+                currentlyShowingCanvas = null;
             }
         }
 

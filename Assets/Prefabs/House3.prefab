@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Large House
-  Cost: 200
+  Cost: 400
   UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}
   DwarfCount: 12

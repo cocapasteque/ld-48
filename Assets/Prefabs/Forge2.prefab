@@ -150,10 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Large Forge
-  Cost: 50
+  Cost: 350
   UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}
-  QualityMultiplier: 2
+  QualityMultiplier: 3
 --- !u!61 &7734030379652713272
 BoxCollider2D:
   m_ObjectHideFlags: 0
