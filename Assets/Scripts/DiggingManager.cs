@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,6 +31,11 @@ public class DiggingManager : MonoBehaviour
     
     public float FadeDuration;
 
+    public GameObject CollectingText;
+    public Vector2 StartCollectingPosition;
+    public Transform MasterCanvas;
+    private Vector2 CollectingWorldPos;
+    
     private TextMeshProUGUI faderText;
 
     public static DiggingManager Instance;
@@ -40,6 +46,7 @@ public class DiggingManager : MonoBehaviour
         else if (Instance != this) Destroy(this);
 
         Initialize();
+        CollectingWorldPos = Camera.main.ScreenToWorldPoint(StartCollectingPosition);
     }
 
     private void Initialize()
@@ -147,7 +154,24 @@ public class DiggingManager : MonoBehaviour
 
     public void MineClicked()
     {
-        Gems += Mathf.RoundToInt(Quality * Depth);
+        var value = Mathf.RoundToInt(Quality * Depth);
+
+        DisplayGemsCollected(value);
+        
+        Gems += value;
+    }
+
+    public void DisplayGemsCollected(float value)
+    {
+        // Gems clicked text
+        var instantiated = Instantiate(CollectingText, MasterCanvas);
+        instantiated.transform.localPosition = StartCollectingPosition;
+        var tmp = instantiated.GetComponentInChildren<TextMeshProUGUI>();
+        tmp.text = $"+{value}";
+        tmp.DOFade(0, 1f);
+        instantiated.GetComponentInChildren<Image>().DOFade(0, 1f);
+        instantiated.transform.DOMoveY(CollectingWorldPos.y + 800, 1.2f);
+        Destroy(instantiated, 1f);
     }
 
     public void IncreaseDwarves(int amount)
@@ -161,7 +185,10 @@ public class DiggingManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f / Speed);
             //Todo: Balancing
-            Gems += Mathf.RoundToInt(Dwarves * Depth);
+            var value =  Mathf.RoundToInt(Dwarves * Depth);
+            DisplayGemsCollected(value);
+            Gems += value;
+
         }
     }
 }

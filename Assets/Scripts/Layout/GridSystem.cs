@@ -68,7 +68,7 @@ namespace Layout
                 {
                     if (currentBuilding == null)
                     {
-                        hit.collider.gameObject.transform.DOPunchScale(Vector3.one / 3, 0.1f);
+                        hit.collider.gameObject.transform.DOPunchScale(Vector3.one / 4, 0.1f);
                         DiggingManager.Instance.MineClicked();
                     }
                     else

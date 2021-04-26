@@ -21,12 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6f809cde-36d1-4003-8d6f-22808b99334e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diggy-diggy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Untitled - 1.pyxel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Untitled - 1.pyxel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BuildingCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BuildingCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/House1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/House1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/House2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/House2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layout/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layout/Grid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tilemap.pyxel" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilemap.pyxel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Empty Cell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Empty Cell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DiggingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DiggingManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,9 +48,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Achievements/AchievementSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/FlickeringLight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DiggingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Layout/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Layout/GridSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DiggingManager.cs" />
       </list>
     </option>
   </component>
@@ -101,7 +100,7 @@
       <updated>1619257982351</updated>
       <workItem from="1619258009238" duration="13799000" />
       <workItem from="1619339327290" duration="4421000" />
-      <workItem from="1619420585949" duration="1140000" />
+      <workItem from="1619420585949" duration="3115000" />
     </task>
     <servers />
   </component>
