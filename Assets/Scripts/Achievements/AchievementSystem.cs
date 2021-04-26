@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Doozy.Engine.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -86,8 +87,8 @@ namespace Achievements
                 return;
 
             var icon = m_popup.Data.Images[0];
-            var title = m_popup.Data.Labels[0].GetComponent<Text>();
-            var message = m_popup.Data.Labels[1].GetComponent<Text>();
+            var title = m_popup.Data.Labels[0].GetComponent<TextMeshProUGUI>();
+            var message = m_popup.Data.Labels[1].GetComponent<TextMeshProUGUI>();
 
 
             m_popup.Data.SetImagesSprites(achievement.icon);
