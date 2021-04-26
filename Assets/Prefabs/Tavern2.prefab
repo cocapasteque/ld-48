@@ -58,7 +58,7 @@ MonoBehaviour:
   - {x: 0.614881, y: -0.24045524, z: 0}
   m_ShapePathHash: 1771524134
   m_Mesh: {fileID: 0}
-  m_InstanceId: -63138
+  m_InstanceId: 82064
 --- !u!1 &424788703222856271
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   - {x: -2.3304403, y: -0.3449309, z: 0}
   m_ShapePathHash: -1240085945
   m_Mesh: {fileID: 0}
-  m_InstanceId: -62470
+  m_InstanceId: 82094
 --- !u!1 &2814457912453276028
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   - {x: -2.3304403, y: -0.3449309, z: 0}
   m_ShapePathHash: -1240085945
   m_Mesh: {fileID: 0}
-  m_InstanceId: -62632
+  m_InstanceId: 82090
 --- !u!1 &3520632340556498580
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   - {x: -0.37375736, y: 0.6391319, z: 0}
   m_ShapePathHash: 341093029
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48654
+  m_InstanceId: 82066
 --- !u!1 &4623615391500090184
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   - {x: -2.3304403, y: -0.3449309, z: 0}
   m_ShapePathHash: -1240085945
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48678
+  m_InstanceId: 82100
 --- !u!1 &6704215184700743713
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   - {x: 0.614881, y: -0.24045524, z: 0}
   m_ShapePathHash: 1771524134
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48686
+  m_InstanceId: 82110
 --- !u!1001 &2084777467530955702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -760,6 +760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5309328527776917437}
     m_Modifications:
+    - target: {fileID: 5881492619601898603, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49ff45a8c36b09e4e84d57a38b5fb5e6, type: 3}
     - target: {fileID: 7431179422410838771, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
       propertyPath: m_Name
       value: BuildingCanvas

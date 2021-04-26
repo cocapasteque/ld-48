@@ -236,7 +236,7 @@ MonoBehaviour:
   - {x: 0.5985328, y: 0.99383575, z: 0}
   m_ShapePathHash: -379036712
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49772
+  m_InstanceId: 81680
 --- !u!1 &8708634099625341296
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   - {x: 0.5050391, y: -1.0218205, z: 0}
   m_ShapePathHash: -644186361
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49766
+  m_InstanceId: 81674
 --- !u!1001 &235603873828568087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,6 +375,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5309328527776917437}
     m_Modifications:
+    - target: {fileID: 4245822549970544117, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 41.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245822549970544117, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881492619601898603, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49ff45a8c36b09e4e84d57a38b5fb5e6, type: 3}
+    - target: {fileID: 5881492619601898603, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7431179422410838771, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
       propertyPath: m_Name
       value: BuildingCanvas

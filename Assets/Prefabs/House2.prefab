@@ -122,7 +122,7 @@ MonoBehaviour:
   - {x: 0.8572477, y: 1.3013978, z: 0}
   m_ShapePathHash: -134989078
   m_Mesh: {fileID: 0}
-  m_InstanceId: 44584
+  m_InstanceId: 81906
 --- !u!1 &3128199798926237919
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5309328527776917437}
     m_Modifications:
+    - target: {fileID: 5881492619601898603, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49ff45a8c36b09e4e84d57a38b5fb5e6, type: 3}
     - target: {fileID: 7431179422410838771, guid: 5696d0485b191b34299d888e265eccfd, type: 3}
       propertyPath: m_Name
       value: BuildingCanvas
