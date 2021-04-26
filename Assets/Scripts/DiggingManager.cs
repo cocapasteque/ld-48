@@ -132,7 +132,12 @@ public class DiggingManager : MonoBehaviour
         if (Gems >= DepthCosts[Depth - 1] && Depth < DepthCosts.Count)
         {
             Gems -= DepthCosts[Depth - 1];
-            StartCoroutine(ChangeDepth());
+            if (Depth == DepthCosts.Count)
+            {
+                StartCoroutine(LoseScreen());
+            }
+            else
+                StartCoroutine(ChangeDepth());
         }
 
         IEnumerator ChangeDepth()
@@ -174,6 +179,16 @@ public class DiggingManager : MonoBehaviour
             ScreenFader.blocksRaycasts = false;
             ActiveFader = false;
         }
+    }
+
+    private IEnumerator LoseScreen()
+    {
+        yield return null;
+    }
+
+    private IEnumerator WinScreen()
+    {
+        yield return null;
     }
 
     public void PayGems(int amount)
