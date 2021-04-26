@@ -8,9 +8,12 @@ using UnityEngine.UI;
 
 public class DiggingManager : MonoBehaviour
 {
+    public float WinDuration = 60;
+
     public long Gems;
     public List<string> Suffixes;
     public long TotalMinedGems;
+    public long LevelGems;
     public int Dwarves;
     
     public int Depth;
@@ -33,7 +36,10 @@ public class DiggingManager : MonoBehaviour
     public TextMeshProUGUI SpeedText;
 
     public CanvasGroup ScreenFader;
-    
+
+    public CanvasGroup LoseScreen;
+    public CanvasGroup WinScreen;
+
     public float FadeDuration;
 
     public GameObject CollectingText;
@@ -46,6 +52,9 @@ public class DiggingManager : MonoBehaviour
     private Image NextLevelImage;
     private TextMeshProUGUI faderText;
     private UIDrawer[] drawers;
+    private bool mining;
+
+    private float lastMiningTimestamp;
 
     public static DiggingManager Instance;
 
@@ -100,41 +109,50 @@ public class DiggingManager : MonoBehaviour
             ScreenFader.interactable = false;
             ScreenFader.blocksRaycasts = false;
             ActiveFader = false;
+            mining = true;
             StartCoroutine(Mining());
         }
     }
 
     private void Update()
     {
-        UpdateGemText();
+        GemText.text = FormatGemText(Gems);
         DwarfText.text = $"Dwarves: {Dwarves}";
         QualityText.text = $"Quality: {(int)Quality * 100}%";
         SpeedText.text = $"Motivation: {(int)(Speed * 100f)}%";
 
-        NextLevelImage.fillAmount = (float)Gems / DepthCosts[Depth - 1];
-        NextLevelButton.interactable = Gems >= DepthCosts[Depth - 1];
+        NextLevelImage.fillAmount = (float)LevelGems / DepthCosts[Depth - 1];
+        NextLevelButton.interactable = LevelGems >= DepthCosts[Depth - 1];
+
+        if (TotalMinedGems >= 2)
+        {
+            if (Time.time - lastMiningTimestamp > WinDuration)
+            {
+                StartCoroutine(ShowWinScreen());
+            }
+        }
     }
 
-    private void UpdateGemText()
+    private string FormatGemText(long value)
     {
         int suffixIndex = 0;
-        string gemText = Gems.ToString();
+        string gemText = value.ToString();
         while (gemText.ToString().Length > 5)
         {
             suffixIndex++;
             gemText = gemText.Substring(0, gemText.Length - 3);
         }
-        GemText.text = $"{gemText}{Suffixes[suffixIndex]}";
+        return $"{gemText}{Suffixes[suffixIndex]}";
     }
+
 
     public void IncreaseDepth()
     {
-        if (Gems >= DepthCosts[Depth - 1] && Depth < DepthCosts.Count)
-        {
-            Gems -= DepthCosts[Depth - 1];
+        if (LevelGems >= DepthCosts[Depth - 1])
+        {          
             if (Depth == DepthCosts.Count)
             {
-                StartCoroutine(LoseScreen());
+                StartCoroutine(ShowLoseScreen());
             }
             else
                 StartCoroutine(ChangeDepth());
@@ -163,6 +181,8 @@ public class DiggingManager : MonoBehaviour
             DepthTiles[Depth - 1].SetActive(false);
             Depth++;
             DepthTiles[Depth - 1].SetActive(true);
+            LevelGems = 0;
+            Gems = 0;
             Layout.GridSystem.Instance.ClearGrid();
 
             yield return new WaitForSeconds(3f);
@@ -178,17 +198,42 @@ public class DiggingManager : MonoBehaviour
             ScreenFader.interactable = false;
             ScreenFader.blocksRaycasts = false;
             ActiveFader = false;
+            lastMiningTimestamp = Time.time;
         }
     }
 
-    private IEnumerator LoseScreen()
+    private IEnumerator ShowLoseScreen()
     {
-        yield return null;
+        mining = false;
+        var t = 0f;
+        var startTime = Time.time;
+        LoseScreen.interactable = true;
+        LoseScreen.blocksRaycasts = true;
+        var loseText = LoseScreen.GetComponentInChildren<TextMeshProUGUI>();
+        loseText.text = loseText.text.Replace("{GemCount}", TotalMinedGems.ToString());
+        while (t < 1f)
+        {
+            t = (Time.time - startTime) / FadeDuration;
+            LoseScreen.alpha = Mathf.Lerp(0f, 1f, t);
+            yield return null;
+        }
     }
 
-    private IEnumerator WinScreen()
+    private IEnumerator ShowWinScreen()
     {
-        yield return null;
+        mining = false;
+        var t = 0f;
+        var startTime = Time.time;
+        WinScreen.interactable = true;
+        WinScreen.blocksRaycasts = true;
+        var winText = WinScreen.GetComponentInChildren<TextMeshProUGUI>();
+        winText.text = winText.text.Replace("{GemCount}", TotalMinedGems.ToString());
+        while (t < 1f)
+        {
+            t = (Time.time - startTime) / FadeDuration;
+            WinScreen.alpha = Mathf.Lerp(0f, 1f, t);
+            yield return null;
+        }
     }
 
     public void PayGems(int amount)
@@ -204,20 +249,23 @@ public class DiggingManager : MonoBehaviour
         
         Gems += value;
         TotalMinedGems += value;
+        LevelGems += value;
     }
 
     public void DisplayGemsCollected(float value)
     {
+        lastMiningTimestamp = Time.time;
+
         // Gems clicked text
         var instantiated = Instantiate(CollectingText, MasterCanvas);
         instantiated.transform.SetAsFirstSibling();
         instantiated.transform.localPosition = StartCollectingPosition;
         var tmp = instantiated.GetComponentInChildren<TextMeshProUGUI>();
-        tmp.text = $"+{value}";
+        tmp.text = $"+{FormatGemText((long)value)}";
         tmp.DOFade(0, 1f);
         instantiated.GetComponentInChildren<Image>().DOFade(0, 1f);
         instantiated.transform.DOMoveY(CollectingWorldPos.y + 800, 1.2f);
-        Destroy(instantiated, 1f);
+        Destroy(instantiated, 2f);
     }
 
     public void IncreaseDwarves(int amount)
@@ -227,13 +275,14 @@ public class DiggingManager : MonoBehaviour
 
     private IEnumerator Mining()
     {
-        while(true)
+        while(mining)
         {
             yield return new WaitForSeconds(1f / Speed);
             var value =  Mathf.RoundToInt(Dwarves * Mathf.Pow(5, Depth - 1));
             if(value > 0) DisplayGemsCollected(value);
             Gems += value;
             TotalMinedGems += value;
+            LevelGems += value;
         }
     }
 }
