@@ -114,15 +114,15 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.545067, y: 1.0743818, z: 0}
-  - {x: -1.3614658, y: 0.69938433, z: 0}
-  - {x: -1.3646357, y: 0.011212379, z: 0}
-  - {x: -0.34821254, y: -0.50053835, z: 0}
-  - {x: 0.49394858, y: -0.054398052, z: 0}
-  - {x: 0.4757698, y: 0.59093875, z: 0}
-  m_ShapePathHash: 70148462
+  - {x: -0.14259025, y: 1.8128393, z: 0}
+  - {x: -0.9869875, y: 1.4098432, z: 0}
+  - {x: -0.9341606, y: 0.13020554, z: 0}
+  - {x: 0.04376483, y: -0.31154925, z: 0}
+  - {x: 0.8649271, y: 0.04009647, z: 0}
+  - {x: 0.8572477, y: 1.3013978, z: 0}
+  m_ShapePathHash: -134989078
   m_Mesh: {fileID: 0}
-  m_InstanceId: 114828
+  m_InstanceId: 44584
 --- !u!1 &3128199798926237919
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: fa12bddbfb2a12f40a8c5a989506826f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a93e084685534d439818a84f46a728e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -348,11 +348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.357
+      value: 0.728
       objectReference: {fileID: 0}
     - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.187
+      value: 0.309
       objectReference: {fileID: 0}
     - target: {fileID: 5998646160562331536, guid: 493e05cb8fafdca4b9b4cec049a3e5e3, type: 3}
       propertyPath: m_LocalPosition.z

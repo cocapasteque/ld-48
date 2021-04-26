@@ -13,14 +13,14 @@ namespace Layout
         public float cellHeight;
 
         public GameObject emptyCell;
-        
+
         public Cell[,] cells;
 
         private void Start()
         {
             BuildGrid();
         }
-        
+
         public void SetCell(GameObject prefab, int x, int y)
         {
             var previous = cells[x, y];
@@ -34,6 +34,15 @@ namespace Layout
             cell.y = y;
             cell.building = instance;
             cells[x, y] = cell;
+
+            var renderer = instance.GetComponentInChildren<SpriteRenderer>();
+            renderer.sortingOrder = 8 - (y * 2);
+
+            var particles = instance.GetComponentsInChildren<ParticleSystemRenderer>();
+            foreach (var p in particles)
+            {
+                p.sortingOrder = (9 - (y * 2));
+            }
         }
 
         public void RemoveBuilding(int x, int y)

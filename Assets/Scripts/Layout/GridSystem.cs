@@ -82,7 +82,7 @@ namespace Layout
 
                         DiggingManager.Instance.PayGems(currentBuilding.Cost);
                         AchievementSystem.Instance.BuildingBuilt(currentBuilding);
-
+                        
                         SetBuilding(null);
                     }
                     else
