@@ -111,18 +111,18 @@ MonoBehaviour:
   m_HasRenderer: 0
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 0
+  m_SelfShadows: 1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.14259025, y: 1.8128393, z: 0}
-  - {x: -0.9869875, y: 1.4098432, z: 0}
-  - {x: -0.9341606, y: 0.13020554, z: 0}
-  - {x: 0.04376483, y: -0.31154925, z: 0}
+  - {x: 0.044164926, y: -0.40487707, z: 0}
+  - {x: -0.9675336, y: 0.12201142, z: 0}
+  - {x: -0.9691771, y: 0.12631482, z: 0}
+  - {x: 0.043542787, y: -0.42827117, z: 0}
   - {x: 0.8649271, y: 0.04009647, z: 0}
-  - {x: 0.8572477, y: 1.3013978, z: 0}
-  m_ShapePathHash: -134989078
+  - {x: 0.8646957, y: 0.040801167, z: 0}
+  m_ShapePathHash: -1365099901
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49190
+  m_InstanceId: 88868
 --- !u!1 &3128199798926237919
 GameObject:
   m_ObjectHideFlags: 0
