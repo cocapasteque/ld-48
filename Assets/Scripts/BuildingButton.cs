@@ -14,14 +14,18 @@ public class BuildingButton : MonoBehaviour
 
     private void Start()
     {
-        button = GetComponent<Button>();
-        ButtonText.text = $"{BuildingPrefab.Name} ({BuildingPrefab.Cost})";
-        button.onClick.AddListener(SelectBuilding);
+        button = GetComponent<Button>();       
+        button.onClick.AddListener(SelectBuilding);     
+    }
+
+    private void OnEnable()
+    {
+        ButtonText.text = $"{BuildingPrefab.Name} ({BuildingPrefab.Cost * DiggingManager.Instance.Depth})";
     }
 
     private void Update()
     {
-        button.interactable = DiggingManager.Instance.Gems >= BuildingPrefab.Cost;
+        button.interactable = DiggingManager.Instance.Gems >= BuildingPrefab.Cost * DiggingManager.Instance.Depth;
     }
 
     private void SelectBuilding()

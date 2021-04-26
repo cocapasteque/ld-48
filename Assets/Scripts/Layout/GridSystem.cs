@@ -80,7 +80,7 @@ namespace Layout
                     {
                         grid.SetCell(currentBuilding.gameObject, cell.x, cell.y);
 
-                        DiggingManager.Instance.PayGems(currentBuilding.Cost);
+                        DiggingManager.Instance.PayGems(currentBuilding.Cost * DiggingManager.Instance.Depth);
                         AchievementSystem.Instance.BuildingBuilt(currentBuilding);
                         
                         SetBuilding(null);

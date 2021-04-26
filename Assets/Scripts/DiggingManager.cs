@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Doozy.Engine.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +45,7 @@ public class DiggingManager : MonoBehaviour
     private Vector2 CollectingWorldPos;
     private Image NextLevelImage;
     private TextMeshProUGUI faderText;
+    private UIDrawer[] drawers;
 
     public static DiggingManager Instance;
 
@@ -58,6 +60,7 @@ public class DiggingManager : MonoBehaviour
 
     private void Initialize()
     {
+        drawers = FindObjectsOfType<UIDrawer>();
         faderText = ScreenFader.GetComponentInChildren<TextMeshProUGUI>();
         var faderTextCg = faderText.GetComponent<CanvasGroup>();
         NextLevelImage = NextLevelButton.GetComponent<Image>();
@@ -134,6 +137,10 @@ public class DiggingManager : MonoBehaviour
 
         IEnumerator ChangeDepth()
         {
+            foreach (var drawer in drawers)
+            {
+                drawer.Close();
+            }
             ActiveFader = true;
             Layout.GridSystem.Instance.SetBuilding(null);
             faderText.text = StoryTexts[Depth];
@@ -176,7 +183,7 @@ public class DiggingManager : MonoBehaviour
 
     public void MineClicked()
     {
-        var value = Mathf.RoundToInt(Quality * Mathf.Pow(3, Depth - 1));
+        var value = Mathf.RoundToInt(Quality * Mathf.Pow(5, Depth - 1));
 
         DisplayGemsCollected(value);
         
@@ -188,6 +195,7 @@ public class DiggingManager : MonoBehaviour
     {
         // Gems clicked text
         var instantiated = Instantiate(CollectingText, MasterCanvas);
+        instantiated.transform.SetAsFirstSibling();
         instantiated.transform.localPosition = StartCollectingPosition;
         var tmp = instantiated.GetComponentInChildren<TextMeshProUGUI>();
         tmp.text = $"+{value}";
@@ -207,8 +215,7 @@ public class DiggingManager : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(1f / Speed);
-            //Todo: Balancing
-            var value =  Mathf.RoundToInt(Dwarves * Mathf.Pow(3, Depth - 1));
+            var value =  Mathf.RoundToInt(Dwarves * Mathf.Pow(5, Depth - 1));
             if(value > 0) DisplayGemsCollected(value);
             Gems += value;
             TotalMinedGems += value;

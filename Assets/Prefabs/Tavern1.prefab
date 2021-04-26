@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Tavern
-  Cost: 20
+  Cost: 30
   UpgradedBuilding: {fileID: 918803715190772689, guid: 0bdf47a07d991b04cadce2379e603896, type: 3}
   cell: {fileID: 0}
   SpeedMultiplier: 1.1

@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Party Tavern
-  Cost: 150
+  Cost: 500
   UpgradedBuilding: {fileID: 0}
   cell: {fileID: 0}
   SpeedMultiplier: 1.2
