@@ -186,7 +186,7 @@ public class DiggingManager : MonoBehaviour
             yield return new WaitForSeconds(1f / Speed);
             //Todo: Balancing
             var value =  Mathf.RoundToInt(Dwarves * Depth);
-            DisplayGemsCollected(value);
+            if(value > 0) DisplayGemsCollected(value);
             Gems += value;
 
         }
