@@ -124,7 +124,7 @@ public class DiggingManager : MonoBehaviour
         NextLevelImage.fillAmount = (float)LevelGems / DepthCosts[Depth - 1];
         NextLevelButton.interactable = LevelGems >= DepthCosts[Depth - 1];
 
-        if (TotalMinedGems >= 2)
+        if (TotalMinedGems >= 2 && mining)
         {
             if (Time.time - lastMiningTimestamp > WinDuration)
             {
